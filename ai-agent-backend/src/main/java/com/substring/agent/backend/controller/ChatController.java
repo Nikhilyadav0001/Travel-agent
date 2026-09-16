@@ -20,9 +20,9 @@ public class ChatController {
     private final ChatService chatService;
 
     @PostMapping
-    public ResponseEntity<String> chatGet(
+    public ResponseEntity<String> chatGet(@RequestHeader("Conversation-Id") String conversationId,
                                           @RequestBody String message) {
-        return ResponseEntity.ok(chatService.chat(message));
+        return ResponseEntity.ok(chatService.chat(message, conversationId));
     }
 
 }
