@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ai-agent-backend
+
+  ai:
+    openai:
+      base-url: https://api.groq.com/openai/v1
+      api-key: ${GROQ_API_KEY:default-key}
+      chat:
+        options:
+          model: openai/gpt-oss-20b
+          extra-body:
+            reasoning_format: hidden
